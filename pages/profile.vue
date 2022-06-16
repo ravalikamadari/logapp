@@ -7,16 +7,19 @@
     <hr />
     <div class="all">
       <p>Name : {{ name }}</p>
-      <br>
       <p>Email : {{ email }}</p>
-      <br /><br />
+      <br />
       <button class="button" @click="moveToLogin">Log out</button>
     </div>
   </div>
 </template>
 
 <script>
+ import {mapState} from 'vuex'
 export default {
+   computed: {
+        ...mapState(['name','email']),
+    },
   data(){
     return{
       // name:'',
@@ -29,7 +32,7 @@ export default {
       },
       goBack() {
         this.$router.push('/log')
-      },  
+      },
   }
   };
 </script>

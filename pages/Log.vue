@@ -6,7 +6,7 @@
         <ul class="main-nav_items">
           <br /><br />
           <li class="main-nav_item">
-            <a href="/profile">Profile</a>
+            <nuxt-link to="/profile">Profile</nuxt-link>
           </li>
           <!-- <br /><br />
           <li class="main-nav_item">
@@ -67,14 +67,15 @@
         <input
           type="search"
           class="search-bar"
-          v-model="search"
+          v-model="queryParams.title"
           placeholder="Search logs"
+          @change="getLogs"
         />
       </div>
       <span class="date">Sort by DateTime:</span>
       <div class="block">
         <el-date-picker
-          v-model="value1"
+          v-model="queryParams.from"
           type="datetime"
           placeholder="Select 'from' date-time"
           :picker-options="pickerOptions"
@@ -83,10 +84,11 @@
         <br />
         <!-- <p>to</p> -->
         <el-date-picker
-          v-model="value"
+          v-model="queryParams.to"
           type="datetime"
           placeholder="Select 'to' date-time"
           :picker-options="pickerOptions"
+          @change="getLogs"
         >
         </el-date-picker>
         <div>
@@ -98,7 +100,9 @@
             :value="item.value"
           >
           </el-option> -->
-            <el-option>Tag Title</el-option>
+            <el-option
+              ><el-button @click="getTags()">Tags</el-button></el-option
+            >
             <el-option>Unseen</el-option>
             <el-option>All</el-option>
             <el-option>By UserId</el-option>
@@ -107,6 +111,8 @@
         </div>
       </div>
     </header>
+    <br />
+    <br />
     <br />
     <br />
     <!-- <div class="log-item">
@@ -133,60 +139,114 @@
         <button class="btn-2">Delete</button>
       </div> -->
     <!-- </div> -->
+    <template>
+      <el-table :data="logs" @row-click="rowClick" style="width: 100%">
+        <el-table-column prop="id" label="Id" width="180"> </el-table-column>
+        <el-table-column prop="title" label="Title" width="180">
+        </el-table-column>
+        <el-table-column prop="description" label="Description">
+        </el-table-column>
+      </el-table>
+      <!-- Tags Table -->
+      <!-- <el-table v-if="tags.length>0"
+      :data="tags"
+      style="width: 100%">
+      <el-table-column
+        prop="id"
+        label="Id"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="Name"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="created_at"
+        label="CreatedAt">
+      </el-table-column>
+    </el-table> -->
+    </template>
   </div>
 </template>
 
   <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
-      search: '',
+      queryParams: {
+        page: 1,
+        limit: 20,
+        title: '',
+        from: '',
+        to: '',
+      },
       value: '',
-      value1: '',
       options: '',
+      value1: '',
+      value2: '',
       //   enteredGoalValue: '',
       //   goals: [],
 
       pickerOptions: {
-        // shortcuts: [
-          // {
-          //   text: 'Today',
-          //   onClick(picker) {
-          //     picker.$emit('pick', new Date())
-          //   },
-          // },
-          // {
-          //   text: 'Yesterday',
-          //   onClick(picker) {
-          //     const date = new Date()
-          //     date.setTime(date.getTime() - 3600 * 1000 * 24)
-          //     picker.$emit('pick', date)
-          //   },
-          // },
-          // {
-          //   text: 'A week ago',
-          //   onClick(picker) {
-          //     const date = new Date()
-          //     date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
-          //     picker.$emit('pick', date)
-          //   },
-          // },
-        // ],
+        shortcuts: [
+          {
+            text: 'Today',
+            onClick(picker) {
+              picker.$emit('pick', new Date())
+            },
+          },
+          {
+            text: 'Yesterday',
+            onClick(picker) {
+              const date = new Date()
+              date.setTime(date.getTime() - 3600 * 1000 * 24)
+              picker.$emit('pick', date)
+            },
+          },
+          {
+            text: 'A week ago',
+            onClick(picker) {
+              const date = new Date()
+              date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
+              picker.$emit('pick', date)
+            },
+          },
+        ],
       },
       // value1: '',
       // value2: '',
       // value3: '',
     }
   },
-  // methods: {
-  //   addGoal() {
-  //     this.goals.push(this.enteredGoalValue)
-  //     this.enteredGoalValue = ''
-  //   },
-  //   removeGoal() {
-  //     this.goals.splice(1)
-  //   },
-  // },
+  computed: {
+    ...mapState(['logs', 'tags']),
+  },
+  mounted() {
+    this.$store.dispatch('')
+  },
+  methods: {
+    rowClick(row, column, event) {
+      // this.$route.push('TagPage' ,params: { Id: })
+      this.$router.push({ name: 'TagPage', params: { Id: row.Id } })
+    },
+    async getLogs() {
+      console.log(this.queryParams)
+      await this.$store.dispatch('getAllLogs', this.queryParams)
+    },
+    getTags() {
+      alert()
+      this.$store.dispatch('getTags')
+    },
+    //   addGoal() {
+    //     this.goals.push(this.enteredGoalValue)
+    //     this.enteredGoalValue = ''
+    //   },
+    //   removeGoal() {
+    //     this.goals.splice(1)
+    //   },
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -197,7 +257,7 @@ body {
 }
 /* hr {
   border: 1px solid rgb(92, 90, 90);
-  text-decoration: none; 
+  text-decoration: none;
 } */
 .manage {
   display: block;
@@ -261,7 +321,7 @@ body {
 h3,
 h4 {
   display: block;
-  margin-top:10px;
+  margin-top: 10px;
   text-align: center;
   font-size: xx-large;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

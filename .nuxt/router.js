@@ -4,15 +4,15 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _1d58e6c6 = () => interopDefault(import('..\\pages\\AllUsers.vue' /* webpackChunkName: "pages/AllUsers" */))
-const _29d9b090 = () => interopDefault(import('..\\pages\\CreateTag.vue' /* webpackChunkName: "pages/CreateTag" */))
-const _d0d201c6 = () => interopDefault(import('..\\pages\\CreateUser.vue' /* webpackChunkName: "pages/CreateUser" */))
-const _56fef704 = () => interopDefault(import('..\\pages\\Log.vue' /* webpackChunkName: "pages/Log" */))
-const _8526015c = () => interopDefault(import('..\\pages\\LoginPage.vue' /* webpackChunkName: "pages/LoginPage" */))
-const _4902e783 = () => interopDefault(import('..\\pages\\profile.vue' /* webpackChunkName: "pages/profile" */))
-const _f03121fa = () => interopDefault(import('..\\pages\\TagPage.vue' /* webpackChunkName: "pages/TagPage" */))
-const _d7110c2c = () => interopDefault(import('..\\pages\\UpdateUser.vue' /* webpackChunkName: "pages/UpdateUser" */))
-const _4d165aa8 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _08d091d6 = () => interopDefault(import('..\\pages\\AllUsers.vue' /* webpackChunkName: "pages/AllUsers" */))
+const _79926cc2 = () => interopDefault(import('..\\pages\\CreateTag.vue' /* webpackChunkName: "pages/CreateTag" */))
+const _7830cbd4 = () => interopDefault(import('..\\pages\\CreateUser.vue' /* webpackChunkName: "pages/CreateUser" */))
+const _70e15fa5 = () => interopDefault(import('..\\pages\\Log.vue' /* webpackChunkName: "pages/Log" */))
+const _d4debd8e = () => interopDefault(import('..\\pages\\LoginPage.vue' /* webpackChunkName: "pages/LoginPage" */))
+const _74b851ac = () => interopDefault(import('..\\pages\\profile.vue' /* webpackChunkName: "pages/profile" */))
+const _04885eaa = () => interopDefault(import('..\\pages\\TagPage.vue' /* webpackChunkName: "pages/TagPage" */))
+const _7e6fd63a = () => interopDefault(import('..\\pages\\UpdateUser.vue' /* webpackChunkName: "pages/UpdateUser" */))
+const _3de8ffda = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -27,39 +27,39 @@ export const routerOptions = {
 
   routes: [{
     path: "/AllUsers",
-    component: _1d58e6c6,
+    component: _08d091d6,
     name: "AllUsers"
   }, {
     path: "/CreateTag",
-    component: _29d9b090,
+    component: _79926cc2,
     name: "CreateTag"
   }, {
     path: "/CreateUser",
-    component: _d0d201c6,
+    component: _7830cbd4,
     name: "CreateUser"
   }, {
     path: "/Log",
-    component: _56fef704,
+    component: _70e15fa5,
     name: "Log"
   }, {
     path: "/LoginPage",
-    component: _8526015c,
+    component: _d4debd8e,
     name: "LoginPage"
   }, {
     path: "/profile",
-    component: _4902e783,
+    component: _74b851ac,
     name: "profile"
   }, {
     path: "/TagPage",
-    component: _f03121fa,
+    component: _04885eaa,
     name: "TagPage"
   }, {
     path: "/UpdateUser",
-    component: _d7110c2c,
+    component: _7e6fd63a,
     name: "UpdateUser"
   }, {
     path: "/",
-    component: _4d165aa8,
+    component: _3de8ffda,
     name: "index"
   }],
 

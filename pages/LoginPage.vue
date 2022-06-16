@@ -41,7 +41,7 @@ export default {
     }
   },
 
-  methods: {
+ methods: {
     async login() {
       await this.$store.dispatch('login', {
         email: this.email,
@@ -53,7 +53,7 @@ export default {
       else{
         // backdrop: true
         // await this.$store.dispatch('getAllLogs')
-        this.$router.push('/log')
+        // this.$router.push('/log')
       }
     },
   },

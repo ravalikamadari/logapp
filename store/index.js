@@ -5,22 +5,33 @@ const state = () => ({
   email: null,
   title: null,
   description: null,
+  // stacktrace: null,
   my_logs: [],
   logs: [],
+  log: [],
   log_id: null,
+  tags: [],
 })
 
 const getters = {}
 const mutations = {
-  setToken(state, token) {
+  setToken(state, data) {
     state.token = data.token
     state.user_id = data.id
     state.name = data.name
     state.email = data.email
+    console.log(state.email)
   },
 
 setList(state, data) {
     state.logs = data
+  },
+  setTags(state, data) {
+    state.tags = data
+  },
+  setSingleLog(state, data)
+  {
+    state.log = data
   },
 
   createUser(state, data) {
@@ -44,35 +55,49 @@ setList(state, data) {
 
 const actions = {
   async login(state, data) {
-    try {
+    // try {
       // Hit the backend api.
-      const res = await this.$axios.post('user/login/', {
-        email: data.email,
-        password: data.password,
-      })
-      // console.log(res.data.id)
-
-      this.commit('setToken', res.data)
+      const res = await this.$axios.post('http://localhost:5149/api/user/login', data)
       if (res.status == 200) {
-        console.log(res)
-
-        // Set the token after the call is success.
+        this.commit('setToken', res.data)
         this.$axios.setHeader('Authorization', 'Bearer ' + res.data.token)
+      }
+        // Set the token after the call is success.
         // move to the homepage from login page.
         this.$router.push('/log')
-      } else {
-        alert('Invalid email or password')
-      }
-    } catch (e) {
-      console.log(' error while logging in: ' + e)
-      alert(' cannot login right now, please try again later')
-    }
+      // } else {
+        // alert('Invalid email or password')
+      // }
+    // } catch (e) {
+      // console.log(' error while logging in: ' + e)
+      // alert(' cannot login right now, please try again later')
+    // }
   },
 
-  async getAllLogs({ commit, state }) {
-    const res = await this.$axios.get('log')
+  async getAllLogs({ commit, state }, data) {
+    console.log("fhs;.iufru")
+    const res = await this.$axios.get('http://localhost:5149/api/log',{
+      params: {
+        page: data.page,
+        limit: data.limit,
+        title: data.title,
+        from: data.from,
+        to: data.to
+      }
+    }
+    )
+    console.log(res.data);
     commit('setList', res.data)
   },
+  async getSingleLog({ commit, state }, id) {
+    console.log("fhs;.iufru")
+    const res = await this.$axios.get('http://localhost:5149/api/log'+ id)
+    console.log(res.data);
+    commit('setSingleLog', res.data)
+  },
+
+
+
 
   async deleteLog({ commit }, id) {
     // console.log(id)
@@ -118,6 +143,13 @@ const actions = {
     const res = await this.$axios.delete('tag/' + id)
     commit('createdNewPost', res.data)
   },
+  async getTags({ commit, state }) {
+    console.log("fhs;.iufru")
+    const res = await this.$axios.get('http://localhost:5149/api/tag')
+    console.log(res.data);
+    commit('setTags', res.data)
+  },
+
 }
 
 export default {

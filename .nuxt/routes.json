@@ -2,64 +2,55 @@
   {
     "name": "AllUsers",
     "path": "/AllUsers",
-    "component": "C:\\\\Users\\\\NSPIRA\\\\Desktop\\\\logfinal\\\\pages\\\\AllUsers.vue",
-    "chunkName": "pages/AllUsers",
-    "_name": "_1d58e6c6"
+    "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\AllUsers.vue",
+    "chunkName": "pages/AllUsers"
   },
   {
     "name": "CreateTag",
     "path": "/CreateTag",
-    "component": "C:\\\\Users\\\\NSPIRA\\\\Desktop\\\\logfinal\\\\pages\\\\CreateTag.vue",
-    "chunkName": "pages/CreateTag",
-    "_name": "_29d9b090"
+    "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\CreateTag.vue",
+    "chunkName": "pages/CreateTag"
   },
   {
     "name": "CreateUser",
     "path": "/CreateUser",
-    "component": "C:\\\\Users\\\\NSPIRA\\\\Desktop\\\\logfinal\\\\pages\\\\CreateUser.vue",
-    "chunkName": "pages/CreateUser",
-    "_name": "_d0d201c6"
+    "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\CreateUser.vue",
+    "chunkName": "pages/CreateUser"
   },
   {
     "name": "Log",
     "path": "/Log",
-    "component": "C:\\\\Users\\\\NSPIRA\\\\Desktop\\\\logfinal\\\\pages\\\\Log.vue",
-    "chunkName": "pages/Log",
-    "_name": "_56fef704"
+    "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\Log.vue",
+    "chunkName": "pages/Log"
   },
   {
     "name": "LoginPage",
     "path": "/LoginPage",
-    "component": "C:\\\\Users\\\\NSPIRA\\\\Desktop\\\\logfinal\\\\pages\\\\LoginPage.vue",
-    "chunkName": "pages/LoginPage",
-    "_name": "_8526015c"
+    "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\LoginPage.vue",
+    "chunkName": "pages/LoginPage"
   },
   {
     "name": "profile",
     "path": "/profile",
-    "component": "C:\\\\Users\\\\NSPIRA\\\\Desktop\\\\logfinal\\\\pages\\\\profile.vue",
-    "chunkName": "pages/profile",
-    "_name": "_4902e783"
+    "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\profile.vue",
+    "chunkName": "pages/profile"
   },
   {
     "name": "TagPage",
     "path": "/TagPage",
-    "component": "C:\\\\Users\\\\NSPIRA\\\\Desktop\\\\logfinal\\\\pages\\\\TagPage.vue",
-    "chunkName": "pages/TagPage",
-    "_name": "_f03121fa"
+    "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\TagPage.vue",
+    "chunkName": "pages/TagPage"
   },
   {
     "name": "UpdateUser",
     "path": "/UpdateUser",
-    "component": "C:\\\\Users\\\\NSPIRA\\\\Desktop\\\\logfinal\\\\pages\\\\UpdateUser.vue",
-    "chunkName": "pages/UpdateUser",
-    "_name": "_d7110c2c"
+    "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\UpdateUser.vue",
+    "chunkName": "pages/UpdateUser"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\NSPIRA\\\\Desktop\\\\logfinal\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_4d165aa8"
+    "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
   }
 ]
