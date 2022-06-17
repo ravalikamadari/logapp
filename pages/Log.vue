@@ -229,7 +229,9 @@ export default {
   methods: {
     rowClick(row, column, event) {
       // this.$route.push('TagPage' ,params: { Id: })
-      this.$router.push({ name: 'TagPage', params: { Id: row.Id } })
+      // this.$router.push({ name: '', params: { Id: row.Id } })
+      this.$store.dispatch('getSingleLog', row.id)
+      this.$router.push('/log/' + row.id)
     },
     async getLogs() {
       console.log(this.queryParams)

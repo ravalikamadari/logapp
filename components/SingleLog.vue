@@ -9,12 +9,15 @@
       <el-page-header @back="goBack"></el-page-header>
     </div>
     <div class="tags">
-      <form>
-        <label for="text">Title: {{ $route.params.id }}</label>
-        <label for="text">Title: {{ title }}</label>
-        <label for="text">Description: {{ description }}</label>
-        <label for="text">Stacktrace: {{ stacktrace }}</label>
-      </form>
+      <!-- <form>
+        <label for="text">Title: {{ $route.params.id }}</label> -->
+      <!-- <label for="text">Title: {{ title }}</label> -->
+      <!-- <label for="text">Description: {{ description }}</label> -->
+      <!-- <label for="text">Stacktrace: {{ stacktrace }}</label> -->
+      <!-- </form> -->
+      <p>Title : {{ title }}</p>
+      <p>Description : {{ description }}</p>
+      <p>Stacktrace : {{ stack_trace }}</p>
       <hr />
       <div class="add-tag">
         <span>Add tags</span>
@@ -31,7 +34,7 @@
 import { mapState } from 'vuex'
 export default {
   computed: {
-    ...mapState(['title', 'description', 'stacktrace', 'tags']),
+    ...mapState(['title', 'description', 'stack_trace', 'tags']),
   },
   data() {
     return {
@@ -44,6 +47,9 @@ export default {
     }
   },
   methods: {
+    created() {
+      this.$store.dispatch('getSingleLog')
+    },
     goBack() {
       this.$router.push('/log')
     },

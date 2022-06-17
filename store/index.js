@@ -5,11 +5,11 @@ const state = () => ({
   email: null,
   title: null,
   description: null,
-  // stacktrace: null,
+  stack_trace: null,
   my_logs: [],
   logs: [],
   log: [],
-  log_id: null,
+  logId: null,
   tags: [],
 })
 
@@ -31,7 +31,9 @@ setList(state, data) {
   },
   setSingleLog(state, data)
   {
-    state.log = data
+      state.description = data.description,
+      state.title = data.title,
+      state.stack_trace = data.stack_trace
   },
 
   createUser(state, data) {
@@ -51,6 +53,10 @@ setList(state, data) {
     const index = state.users.findIndex((user) => user.id === user.id)
     state.users[index].title = data.title
   },
+  setLogId(state , data){
+    state.logId = data
+
+  }
 }
 
 const actions = {
@@ -91,7 +97,7 @@ const actions = {
   },
   async getSingleLog({ commit, state }, id) {
     console.log("fhs;.iufru")
-    const res = await this.$axios.get('http://localhost:5149/api/log'+ id)
+    const res = await this.$axios.get('http://localhost:5149/api/log/' + id)
     console.log(res.data);
     commit('setSingleLog', res.data)
   },

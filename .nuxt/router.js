@@ -10,8 +10,8 @@ const _7830cbd4 = () => interopDefault(import('..\\pages\\CreateUser.vue' /* web
 const _70e15fa5 = () => interopDefault(import('..\\pages\\Log.vue' /* webpackChunkName: "pages/Log" */))
 const _d4debd8e = () => interopDefault(import('..\\pages\\LoginPage.vue' /* webpackChunkName: "pages/LoginPage" */))
 const _74b851ac = () => interopDefault(import('..\\pages\\profile.vue' /* webpackChunkName: "pages/profile" */))
-const _04885eaa = () => interopDefault(import('..\\pages\\TagPage.vue' /* webpackChunkName: "pages/TagPage" */))
 const _7e6fd63a = () => interopDefault(import('..\\pages\\UpdateUser.vue' /* webpackChunkName: "pages/UpdateUser" */))
+const _90144a76 = () => interopDefault(import('..\\pages\\log\\_id.vue' /* webpackChunkName: "pages/log/_id" */))
 const _3de8ffda = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -50,13 +50,13 @@ export const routerOptions = {
     component: _74b851ac,
     name: "profile"
   }, {
-    path: "/TagPage",
-    component: _04885eaa,
-    name: "TagPage"
-  }, {
     path: "/UpdateUser",
     component: _7e6fd63a,
     name: "UpdateUser"
+  }, {
+    path: "/log/:id?",
+    component: _90144a76,
+    name: "log-id"
   }, {
     path: "/",
     component: _3de8ffda,

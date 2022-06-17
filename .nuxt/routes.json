@@ -36,16 +36,16 @@
     "chunkName": "pages/profile"
   },
   {
-    "name": "TagPage",
-    "path": "/TagPage",
-    "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\TagPage.vue",
-    "chunkName": "pages/TagPage"
-  },
-  {
     "name": "UpdateUser",
     "path": "/UpdateUser",
     "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\UpdateUser.vue",
     "chunkName": "pages/UpdateUser"
+  },
+  {
+    "name": "log-id",
+    "path": "/log/:id?",
+    "component": "C:\\\\Users\\\\Nspira\\\\Documents\\\\logapp\\\\pages\\\\log\\\\_id.vue",
+    "chunkName": "pages/log/_id"
   },
   {
     "name": "index",
